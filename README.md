@@ -16,10 +16,11 @@
 * pandas
 * argparse
 * searchSRA
+* samtools
 
 ### Flags Description
 
-* -f: [REQUIRED] Phage reference file that was the query file in the Search SRA runl
+* -f: [REQUIRED] Phage reference file that was the query file in the Search SRA run
 * -i: [REQUIRED] The output data from SearchSRA, which should contain a folder of 25 folders of .bam and .bam.bai files.
 * -o: [REQUIRED] This is where you specify where you want the output of the pipeline to be.
 * -c: This is the coverage threshold, which is how well you want the SRA files to map to the query file. This defaults to 0.5.
