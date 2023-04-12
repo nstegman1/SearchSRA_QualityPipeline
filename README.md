@@ -1,6 +1,6 @@
 <h1 align="center">SearchSRA and Quality Pipeline</h1>
 
-<p align="center">This is a project for COMP 383/483. This filters through the data from Search SRA and returns the SRA number that have multiple hits to the query fasta file. PLease read the Github Wiki page for more in-depth information.</p>
+<p align="center">This is a project for COMP 383/483. This filters through the data from Search SRA and returns the SRA number that have multiple hits to the query fasta file. Please read the Github Wiki page for more in-depth information.</p>
 
 ### Before you run this, make sure
 
