@@ -5,7 +5,7 @@
 ### Before you run this, make sure
 
 * you have ran SearchSRA with your desired fasta file.
-* you have provided the fasta (NOT .fna) file that you used to run SearchSRA with. 
+* you have provided the fasta file that is one continuous sequence instead of a file with multiple contigs that you used to run SearchSRA with. 
 
 ### Dependencies
 
