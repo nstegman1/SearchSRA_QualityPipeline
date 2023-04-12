@@ -23,7 +23,7 @@
 * -f: [REQUIRED] Phage reference file that was the query file in the Search SRA run
 * -i: [REQUIRED] The output data from SearchSRA, which should contain a folder of 25 folders of .bam and .bam.bai files.
 * -o: [REQUIRED] This is where you specify where you want the output of the pipeline to be.
-* -c: This is the coverage threshold, which is how well you want the SRA files to map to the query file. This defaults to 0.5.
+* -c: This is the coverage threshold, which is how well you want the SRA files to map to the query file. This can be between 0 and 1 but defaults to 0.5.
 
 ### Executing Program
 
@@ -39,7 +39,7 @@ cd insert_base_path_here/srq_quality_pipeline
 
 * Now, one you know the path to your SearchSRA ouput and query fasta file, then you are ready to execute the pipeline.
 ```
-python3 practice_pipeline.py -f phage_reference_file -i input_path -o output_path
+python3 practice_pipeline.py -f phage_reference_file -i input_path -o output_path -c [optional] coverage_threshold
 ```
 
 ### The Files Produced
