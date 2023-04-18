@@ -17,6 +17,7 @@
 * argparse
 * searchSRA
 * samtools
+* ElementTree (xml.etree.ElementTree)
 
 ### Flags Description
 
@@ -37,7 +38,7 @@ git clone https://github.com/nstegman1/SearchSRA_QualityPipeline.git
 cd insert_base_path_here/srq_quality_pipeline
 ```
 
-* Now, one you know the path to your SearchSRA ouput and query fasta file, then you are ready to execute the pipeline.
+* Now, once you know the path to your SearchSRA ouput and query fasta file, then you are ready to execute the pipeline.
 ```
 python3 practice_pipeline.py -f phage_reference_file -i input_path -o output_path -c [optional] coverage_threshold
 ```
