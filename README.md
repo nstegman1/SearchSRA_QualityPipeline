@@ -4,7 +4,7 @@
 
 ### Before you run this, make sure
 
-* You have ran SearchSRA with your desired fasta file.
+* You have ran SearchSRA with your desired fasta file (https://www.searchsra.org/).
 * You have provided the fasta file that is one continuous sequence instead of a file with multiple contigs that you used to run SearchSRA with.
 * You have an NCBI account.
 
@@ -43,12 +43,12 @@ cd insert_base_path_here/sra_quality_pipeline
 * Now, once you know the path to your SearchSRA ouput and query fasta file, then you are ready to execute the pipeline.
 
 ```
-python3 pipeline_v2.py -f phage_reference_file -i input_path -o output_path -e ncbi_email -c [optional] coverage_threshold
+python3 pipeline_v4.py -f phage_reference_file -i input_path -o output_path -e ncbi_email -c [optional] coverage_threshold
 ```
 
 ### The Files Produced
 * A folder containing the filtered pileup files of the SearchSRA output
-* A .csv file containing the SRA record, coverage, average read count, and study names
+* A .csv file containing the SRA record, query coverage, average read count, and study names
 
 
 
