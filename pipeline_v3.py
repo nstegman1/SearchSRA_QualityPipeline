@@ -14,7 +14,7 @@ ADD ARGPARSE:
 -o: path to where you want output DONE
 -c: coverage percentage minimum (defaults to 0.1)
 -q: path to query fasta sequence that you initally put into SearchSRA
-#this cannot do multifasta file!!! You cann only do single fasta files. OR you can automatically concatenate the contigs
+#this cannot do multifasta file!!! You can only do single fasta files. OR you can automatically concatenate the contigs
 of the fna file and puts NNNNNNN between the contigs
 '''
 
@@ -40,7 +40,7 @@ if args.output_path is None:
 if args.input_path is None:
     parser.error('SearchSRA results name must be provided.')
 
-#the creates the directory where the output of the pipeline will go 
+#this creates the directory where the output of the pipeline will go 
 base_path = args.output_path+'/sra_quality_pipeline'
 os.makedirs(base_path)
 os.chdir(base_path)
@@ -59,7 +59,7 @@ log_file = open(base_path+'/PipelineProject.log', 'w+')
 #it will exclude the pileup files with 0 bytes in it
 def bam_to_pileup(cwd):
     
-    #this list holds the list of total bame files from the searchsra output
+    #this list holds the list of total bame files from the searchSRA output
     bam_files = []    
     for filename in glob.iglob(file_folder+'/**', recursive=True):
         if os.path.isfile(filename): # filter dirs
@@ -167,7 +167,7 @@ def parse_pileup_files(cwd):
         except:
             metadata = ('There is no metadata available')
         
-        #this writes out the coverage %, the SRA record, average length of the reads in the pileup file, and metadata
+        #this writes out the the SRA record, coverage %, average length of the reads in the pileup file, and metadata
         log_file.write(sra_number+'\t'+str(percentage)+'\t'+str(avg)+'\t'+metadata+'\n')
          
 
