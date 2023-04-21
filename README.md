@@ -41,6 +41,7 @@ cd insert_base_path_here/sra_quality_pipeline
 ```
 
 * Now, once you know the path to your SearchSRA ouput and query fasta file, then you are ready to execute the pipeline.
+
 ```
 python3 pipeline_v2.py -f phage_reference_file -i input_path -o output_path -e ncbi_email -c [optional] coverage_threshold
 ```
