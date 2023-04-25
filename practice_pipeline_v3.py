@@ -125,7 +125,7 @@ def parse_pileup_files(cwd):
     filtered_coverage = sorted(filtered_coverage, key=lambda x: x[0])
     
     #This writes out the headers of the log file.
-    log_file.write('SRA Number'+'\t'+'Coverage %'+'\t'+'Average Read Length'+'\t'+'Study Title'+'\n')
+    log_file.write('SRA Number'+'\t'+'Query Coverage %'+'\t'+'Average Read Length'+'\t'+'Study Title'+'\n')
     
     #In the reverse order of the files above the provided threshold.
     for i,j in reversed(filtered_coverage):
