@@ -12,9 +12,9 @@
 
 * There is sample SearchSRA output under the compbio.cs.luc.edu server
 * path to SearchSRA output:
-'''
+```
 /home/nstegman/search_sra_data/bam_files_v2
-'''
+```
 
 ### Dependencies
 
