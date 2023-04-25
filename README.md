@@ -8,6 +8,14 @@
 * You have provided the fasta file that is one continuous sequence instead of a file with multiple contigs that you used to run SearchSRA with.
 * You have an NCBI account.
 
+### For Testing Purposes for Comp Bio class:
+
+* There is sample SearchSRA output under the compbio.cs.luc.edu server
+* path to SearchSRA output:
+'''
+/home/nstegman/search_sra_data/bam_files_v2
+'''
+
 ### Dependencies
 
 * os
