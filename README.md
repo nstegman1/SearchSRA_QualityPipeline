@@ -10,7 +10,7 @@
 
 ### For Testing Purposes for Comp Bio class:
 
-* There is sample SearchSRA output for the T3 bacteriophage is under the compbio.cs.luc.edu server
+* There is sample SearchSRA output for the T3 bacteriophage under the compbio.cs.luc.edu server
 * path to SearchSRA output:
 ```
 /home/nstegman/search_sra_data/bam_files_v2
