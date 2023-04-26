@@ -15,8 +15,8 @@ ADD ARGPARSE:
 -c: coverage percentage minimum (defaults to 0.1)
 -q: path to query fasta sequence that you initally put into SearchSRA
 -e: NCBI email used to retrieve SRA files
-#this cannot do multifasta file!!! You can only do single fasta files OR you can automatically concatenate the contigs
-of the fna file and put NNNNNNN between the contigs
+#This cannot do multifasta file!!! You can only do single fasta files OR you can automatically concatenate the contigs
+of the fna file and put NNNNNNN between the contigs.
 '''
 
 def msg(name=None):
@@ -66,7 +66,7 @@ def bam_to_pileup(cwd):
     #This list holds the list of total bam files from the searchsra output.
     bam_files = []    
     for filename in glob.iglob(file_folder+'/**', recursive=True):
-        if os.path.isfile(filename): # filter dirs
+        if os.path.isfile(filename): # Filter dirs
             if filename.endswith('.bam'):
                 #Since the .bai files that are 24 bytes are empty, this filters them out 
                 #so now only the bam files with actual information are converted into pileup files.
