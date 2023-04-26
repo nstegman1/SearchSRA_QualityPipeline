@@ -46,7 +46,7 @@ git clone https://github.com/nstegman1/SearchSRA_QualityPipeline.git
 
 * Then, you must be in the same directory where the .py pipeline file is:
 ```
-cd insert_base_path_here/sra_quality_pipeline
+cd insert_base_path_here/SearchSRA_Quality_Pipeline
 ```
 
 * Now, once you know the path to your SearchSRA ouput and query fasta file, then you are ready to execute the pipeline.
