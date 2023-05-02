@@ -12,7 +12,7 @@ ADD ARGPARSE:
 --test: runs with test data provided in github
 -i: path to SearchSRA folders
 -o: path to where you want output
--c: coverage percentage minimum (defaults to 0.1)
+-c: coverage percentage minimum (defaults to 0.5)
 -q: path to query fasta sequence that you initally put into SearchSRA
 -e: NCBI email used to retrieve SRA files
 #This cannot do multifasta file!!! You can only do single fasta files OR you can automatically concatenate the contigs
@@ -22,7 +22,7 @@ of the fna file and put NNNNNNN between the contigs.
 def msg(name=None):
     return '''python3 pipeline_final.py -f phage_reference_file -i input_path -o output_path -e ncbi_email -c [optional] coverage_threshold'''
 
-#This adds the argparse input for the phage reference file, searchsra output, entrz email, coverage threshold, and path to where the output will go. 
+#This adds the argparse input for the phage reference file, searchsra output, entrez email, coverage threshold, and path to where the output will go. 
 parser=argparse.ArgumentParser(usage=msg())
 parser.add_argument('-o', '--output_path', action="store", metavar='<directory>', help='Directory to store resulting files (required)')
 parser.add_argument('-i', '--input_path', action="store", metavar='<directory>', help='Directory to SearchSRA folders of results (required)')
@@ -34,7 +34,7 @@ group=parser.add_mutually_exclusive_group()
 parser.add_argument('--version', action='version', version='%(prog)s 1.0')
 args=parser.parse_args()
 
-#If a certain argument is provided, provide an error statement.
+#If a certain argument is not provided, provide an error statement.
 if args.phage_reference_file is None:
     parser.error('Phage reference file must be provided for analysis.')
 if args.output_path is None:
@@ -56,7 +56,7 @@ file_folder = args.input_path
 query_path = args.phage_reference_file
 
 #This creates the log file.
-log_file = open(base_path+'/PipelineProject.log', 'w+')
+output_file = open(base_path+'/SRA_pipeline_output.csv', 'w+')
 
 #1: CONVERT TO PILEUP FILE
 #This function will not only convert the bam files to pileup files, but also 
@@ -129,17 +129,15 @@ def parse_pileup_files(cwd):
     filtered_coverage = sorted(filtered_coverage, key=lambda x: x[0])
     
     #This writes out the headers of the log file.
-    log_file.write('SRA Number'+'\t'+'Query Coverage %'+'\t'+'Average Read Length'+'\t'+'Study Title'+'\n')
+    output_file.write('SRA Number'+'\t'+'Query Coverage %'+'\t'+'Average Read Count'+'\t'+'Study Title'+'\n')
     
     #In the reverse order of the files above the provided threshold.
     for i,j in reversed(filtered_coverage):
         sra_number = j[-17:-7]
         result = sra_number.startswith('/')
-        print(result)
         
         if result == True:
             sra_number = j[-16:-7]
-            print(j[-16:-7])
         
         print(sra_number)
         #Convert and round the decimal to a percentage.
@@ -174,9 +172,9 @@ def parse_pileup_files(cwd):
             metadata = ('There is no metadata available')
         
         #This writes out the query coverage %, the SRA record, average read count in the pileup file, and the metadata.
-        log_file.write(sra_number+'\t'+str(percentage)+'\t'+str(avg)+'\t'+metadata+'\n')
+        output_file.write(sra_number+'\t'+str(percentage)+'\t'+str(avg)+'\t'+metadata+'\n')
          
 
 bam_to_pileup(base_path)
 parse_pileup_files(base_path)
-log_file.close()
+output_file.close()
